@@ -1,0 +1,493 @@
+
+
+/*
+01.1 ICONS
+*/
+
+.reset-button {
+	background: none;
+	border: none;
+}
+
+/*********************
+01. GENERAL STYLES
+*********************/
+
+html, body {
+	height: 100%;
+ }
+
+body {
+	font-family: @sans-serif;
+	font-size: 100%;
+	line-height: 1.5;
+	background: #fafbfc;
+	color: #565656;
+	/* sticky footer */
+	display: flex; 
+	flex-direction: column;
+}
+
+.post {
+	ul, ol {
+		padding: 0 0 0 20px;
+		list-style-type: disc;
+	}
+}
+
+/*********************
+03. LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	margin: 0 auto;
+}
+
+/*********************
+04. LINK STYLES
+*********************/
+
+a, a:visited {
+	color: @link-color;
+	font-weight: bold;
+	text-decoration: none;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: @link-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/*********************
+07. NAVIGATION STYLES
+*********************/
+
+
+
+/*********************
+08. TAB
+**********************/
+
+.page-template-page-custom #inner-content { 
+	background:  white; 
+	padding: 50px;
+	border: 1px #e1e4e8 solid;
+}
+
+.nav, .sub-menu {	margin: 0; }
+.content-wrap { 
+	padding: 35px 50px 50px 50px;
+	margin: 0 auto;	
+	max-width: 1300px;
+
+}
+
+ .nav .sub-menu > .menu-item-has-children { 
+	 bottom: -1px; 
+	 position: relative; 
+	 padding: 0; 
+	 > a { display: none; } 
+}
+
+
+.content-wrap .nav {
+	position: relative;
+	top: 1px;
+	margin-top: 0;
+	> .sub-menu > li { margin: 0 40px; }
+
+	.current_page_item {	
+		border-color: #22406e #e1e4e8 transparent;
+		background: white;
+	}
+	li { 
+		float: left; 
+		padding: 7px 15px 8px; 
+		 
+		white-space: nowrap;
+		border: solid transparent;
+		border-width: 3px 1px 1px;
+		border-radius: 3px 3px 0 0;
+
+		a { 
+			text-decoration: none;
+			color: black;
+		}
+
+
+	}
+	> li { display: none; margin: 0; border: 0; padding: 0;
+    	> a { display:  none;}
+	
+	}
+	.current-menu-ancestor { display: block; }
+
+}
+
+/*********************
+08. POSTS & CONTENT STYLES
+**********************/
+
+.image-title-bar { 
+	background: rgba(27, 65, 109, 0.6); 
+	bottom: 0;
+	padding: 20px;
+	font-size: 1.4em; color: white;
+	line-height: 1;
+	margin: 0;
+	position: absolute;
+	width: 100%;
+}
+
+
+.page-header {
+	position: relative;
+	img { 
+		margin-top: @header-height; 
+		width: 100%;
+	}
+}
+
+
+
+
+.single .post {
+	max-width: 800px;
+	background: white;
+	padding: 50px;
+	margin: 0 auto;
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.2);
+}
+
+.category .chapter { 
+	padding: 20px; 	
+		.post { 
+			width: 50%; 
+			padding: 10px; 
+			float: left;
+			.article-inner {
+
+				h3 { font-size: 1.3em; }
+				border:1px solid #dedede; 
+				background: white;
+				padding: 16px;
+				border-radius: 3px;
+				height: 300px;
+				overflow: hidden;
+				box-shadow: 0 2px 6px rgba(100, 100, 100, 0.2);
+				box-sizing: border-box;
+			}
+		} 
+	
+}
+
+
+#content {
+	margin-left: 0;
+	
+	/* sticky-footer */
+	flex: 1 0 auto;
+
+	#inner-content { margin: 0 auto; }
+}
+
+	/******************************************************************
+	09.2.1 -Burger
+	******************************************************************/
+
+	.burger-button {
+		float: left;
+		font-size: 50px; 
+		.reset-button;
+		.burger; 
+	}/* burger button */
+
+	/******************************************************************
+	09.2.1 -Logo
+	******************************************************************/
+	
+	.logo-main {
+		background: black;
+	}
+
+/******************************************************************
+09. PAGE NAVI STYLES
+09.1 - Top-Bar
+******************************************************************/
+.bar { 
+	position: fixed; 
+	width: 100%;
+	z-index: 1;
+	#searchform { display: none; }
+}
+
+.bar, .column-header { 
+	
+	background: white;
+	vertical-align: middle;
+	line-height: @header-height;
+	display: inline-block;
+	vertical-align: middle;
+	button { height: @header-height; padding: 0 20px; }
+	> #logo, > button, > form, #logo > a { 
+		display: inline-block; 
+		vertical-align: middle;
+		line-height: @header-height;
+	}
+	
+}
+
+.bar { box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.3); }
+#logo {
+	box-sizing: border-box;
+	img { 
+		max-width: 100%;
+		max-height: 100%;
+		height: auto;
+		width: 200px;
+		display: block;
+	}
+}
+
+/******************************************************************
+09. PAGE NAVIGATION STYLES
+09.2 - Left-Canvas
+
+	******************************************************************
+	09.2.1 -Frame
+	******************************************************************/
+	.nav-column.active { left: 0 }
+	.toggle-sidebar { .burger-button; }
+	.nav-column, .screen { transition: all 0.1s ease-in 0.3s; }
+	.nav-column {
+		position: fixed; 
+		top: 0;
+		bottom: 0;
+		left: -@left-column;
+		width: @left-column;
+		max-width: 100%;
+		background: @nav-background-color;
+		li { width: 100%; }
+		.logo { .logo-main; }	
+	}
+	.screen { 
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		background: rgba(0, 0, 0, 0);
+	}
+	.screen.active {
+		background: rgba(0, 0, 0, 0.4);
+		display: block;
+	}
+
+	/******************************************************************
+	09.2.1 -Menu
+	******************************************************************/
+
+
+.nav-column { z-index: 3; }
+
+
+.nav-column .nav {
+		
+		a, a:visited { font-weight: normal; }
+		.click, .click .sub-menu { display: block; }
+
+		.current_page_item > a, .current_page_ancestor > a { 
+			border-left: 5px solid @nav-background-active-color;
+			pointer-events: none;
+			cursor: default;		
+		}
+		
+		.current_page_item { background: @nav-background-active-color; }
+
+		.menu-item-has-children a:before{
+			opacity: 1;
+		}
+
+		.current_page_item.menu-item-has-children { 
+			padding-bottom: 25px; 
+		}
+
+		> li {	
+			border-top: 1px solid #d6d6d6;
+			> a {
+				.right-arrow;
+				border-left: 5px solid white;
+				font-weight: bold;
+				text-transform: uppercase;
+				&:before {			
+							margin-right: 5px;
+							opacity: 0;
+				}
+			}
+		}
+
+		.sub-menu { display: none; }
+		
+		li.menu-item-has-children.current-menu-item,
+		li.menu-item-has-children.current_page_ancestor,
+		li.menu-item-has-children.click
+		{		
+			.sub-menu { 
+				display: block; 
+				li {
+					border-top: none;
+					a { padding-left: 60px; height: 25px; }
+				}
+			}
+			> a:before{ 
+				transform: rotate(90deg);	
+			}				
+		}		
+
+		li {
+
+			a {			
+				
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				text-decoration: none;
+				color: #424242;
+				height: 50px;
+				padding: 0 20px 0 7px;		
+				vertical-align: middle;
+
+				&:hover, &:focus {
+					border-left-color: #22406e;
+				}
+
+				div, span {
+					vertical-align: middle;
+	
+				}
+				img { max-width: 100%; }
+
+				.pre-icon, .post-icon { 
+					width: 24px;
+					height: 24px;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center; 
+				}
+				.title {
+					flex: 1;
+
+				}
+
+				img { max-height: 30px; }
+
+			}
+
+			ul.sub-menu,
+			ul.children {
+
+				li {
+
+					a {
+						padding-left: 25px;
+					}
+				}
+			}
+
+		} /* end .menu li */
+
+	} /* end .nav */
+
+/******************************************************************
+09. PAGE NAVI STYLES
+09.3 - Blog-Page-Navigation
+|	<<  0 1 2 3 4  >>    |
+******************************************************************/
+
+.disc-nav {
+	text-decoration: none;
+	background: white;
+	border: 2px solid #d6d6d6;
+	border-radius: 50%;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
+	font-weight: bold;
+	margin: 5px;
+}
+
+
+li {
+	&.bpn-prev-link, &.bpn-next-link {
+		a {
+			padding: 0;
+		}
+	}
+	&.bpn-prev-link {
+		.left-arrow;
+		a:before { margin: -3px 0 0 -2px; }
+	}
+	&.bpn-next-link {
+		.right-arrow;
+		a:before { position: relative; top: -1px; }
+	}
+}
+
+.page-navigation { width: 100%; text-align: center; } 
+.page_navi { 
+	display: inline-block;
+	.bpn-current {
+		.disc-nav;
+		background: #d6d6d6;			
+	}
+} 
+
+
+/******************************************************************
+09. PAGE NAVI STYLES
+09.4 - Blog-Page-Navigation
+|	pevious << >> next    |
+******************************************************************/
+
+	/* fallback previous & next links */
+	.wp-prev-next {
+
+		.prev-link {
+			float: left;
+		}
+
+		.next-link {
+			float: right;
+		}
+
+	}
+
+/*********************
+13. FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+	margin-left: 0;
+	background: whitesmoke;
+}
